@@ -6,5 +6,6 @@ window.firebaseConfig = {
   messagingSenderId: "97481254094",
   appId: "1:97481254094:web:eea0f85ebed6838cfcdc9f"
 };
+
 window.initialAuthToken = undefined;
 window.appId = 'prep-enem-default-app-id';
