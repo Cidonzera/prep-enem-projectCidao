@@ -1,10 +1,10 @@
 export const firebaseConfig = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME",
-  projectId: "REPLACE_ME",
-  storageBucket: "REPLACE_ME",
-  messagingSenderId: "REPLACE_ME",
-  appId: "REPLACE_ME"
+  apiKey: "AIzaSyD0sGz...",
+  authDomain: "meu-projeto.firebaseapp.com",
+  projectId: "meu-projeto",
+  storageBucket: "meu-projeto.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123456789:web:abcdef123456"
 };
 export const initialAuthToken = undefined;
 export const appId = 'prep-enem-default-app-id';
