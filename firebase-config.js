@@ -1,4 +1,3 @@
-// firebase-config.js
 window.firebaseConfig = {
   apiKey: "AIzaSyCq9ItRenohm9tl9Aol59gyRz81XOD3msc",
   authDomain: "projeto-enem-e3451.firebaseapp.com",
