@@ -1,4 +1,4 @@
-// Configuração Firebase para uso global no navegador
+// firebase-config.js
 window.firebaseConfig = {
   apiKey: "AIzaSyCq9ItRenohm9tl9Aol59gyRz81XOD3msc",
   authDomain: "projeto-enem-e3451.firebaseapp.com",
@@ -8,8 +8,5 @@ window.firebaseConfig = {
   appId: "1:97481254094:web:eea0f85ebed6838cfcdc9f"
 };
 
-// Token customizado opcional (normalmente fica undefined)
 window.initialAuthToken = undefined;
-
-// ID usado nas coleções
-window.appId = 'prep-enem-default-app-id';
+window.appId = "prep-enem-default-app-id";
