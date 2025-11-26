@@ -7,13 +7,9 @@ import {
     getFirestore, doc, setDoc, onSnapshot, collection, query, runTransaction, getDocs, deleteDoc 
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-// Removido: import export quebrado
-// import { firebaseConfig, initialAuthToken, appId } from './firebase-config.js';
-
-let db; 
-let auth; 
-let userId = null; 
-let isAuthReady = false;
+let db;
+let auth;
+let userId = null;
 
 const profileNameEl = document.getElementById('profile-name');
 const xpFill = document.querySelector('.xp-fill');
@@ -23,12 +19,18 @@ const levelValue = document.getElementById('level-value');
 const dailyTasksContainer = document.getElementById('daily-tasks-container');
 const headerDateEl = document.getElementById('header-date');
 
+// -------------------------
+// Firebase Init
+// -------------------------
 function initFirebase() {
     const app = initializeApp(window.firebaseConfig);
     auth = getAuth(app);
     db = getFirestore(app);
 }
 
+// -------------------------
+// Auth
+// -------------------------
 async function startAuth() {
     if (window.initialAuthToken) {
         await signInWithCustomToken(auth, window.initialAuthToken);
@@ -42,7 +44,6 @@ function listenAuth() {
         if (!user) return;
 
         userId = user.uid;
-        isAuthReady = true;
 
         await checkOrCreateProfile();
         listenToUserProfile();
@@ -50,6 +51,9 @@ function listenAuth() {
     });
 }
 
+// -------------------------
+// Profile
+// -------------------------
 async function checkOrCreateProfile() {
     const ref = doc(db, window.appId, userId);
 
@@ -68,6 +72,7 @@ function listenToUserProfile() {
         if (!snap.exists()) return;
 
         const data = snap.data();
+
         profileNameEl.textContent = data.name;
         xpValue.textContent = data.xp;
         coinsValue.textContent = data.coins;
@@ -77,13 +82,16 @@ function listenToUserProfile() {
     });
 }
 
+// -------------------------
+// XP System
+// -------------------------
 function xpNeededForLevel(level) {
     return 100 * level;
 }
 
 function updateXpBar(xp, level) {
     const pct = Math.min(100, (xp / xpNeededForLevel(level)) * 100);
-    if (xpFill) xpFill.style.width = pct + "%";
+    xpFill.style.width = pct + "%";
 }
 
 async function addXP(amount) {
@@ -109,18 +117,9 @@ async function addXP(amount) {
     });
 }
 
-function formatDate() {
-    return new Date().toLocaleDateString('pt-BR', { 
-        weekday:'long', 
-        day:'2-digit', 
-        month:'long' 
-    });
-}
-
-function updateHeaderDate() {
-    if (headerDateEl) headerDateEl.textContent = formatDate();
-}
-
+// -------------------------
+// Tarefas Diárias
+// -------------------------
 async function loadDailyTasks() {
     dailyTasksContainer.innerHTML = "";
 
@@ -150,6 +149,19 @@ function renderTask(id, data) {
     dailyTasksContainer.appendChild(div);
 }
 
+// -------------------------
+// Date
+// -------------------------
+function updateHeaderDate() {
+    headerDateEl.textContent = new Date().toLocaleDateString(
+        'pt-BR',
+        { weekday:'long', day:'2-digit', month:'long' }
+    );
+}
+
+// -------------------------
+// Init
+// -------------------------
 async function initApp() {
     initFirebase();
     updateHeaderDate();
