@@ -4,39 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prep ENEM</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1 id="header-date"></h1>
+        <h1 id="header-date">Carregando data...</h1>
         <div id="profile">
             <span id="profile-name">Carregando...</span>
         </div>
     </header>
 
     <section id="stats">
-        <div class="stat">
-            Nível: <span id="level-value">0</span>
-        </div>
-        <div class="stat">
-            Moedas: <span id="coins-value">0</span>
-        </div>
+        <div class="stat">Nível: <span id="level-value">1</span></div>
+        <div class="stat">Moedas: <span id="coins-value">0</span></div>
+
         <div class="xp-bar">
             <div class="xp-fill"></div>
         </div>
-        <div class="stat">
-            XP: <span id="xp-value">0</span>
-        </div>
+
+        <div class="stat">XP: <span id="xp-value">0</span></div>
     </section>
 
     <h2>Tarefas Diárias</h2>
+
     <div id="daily-tasks-container"></div>
 
-    <!-- Firebase configs -->
+    <!-- Firebase config (global) -->
     <script src="firebase-config.js"></script>
 
-    <!-- App principal -->
+    <!-- Código principal -->
     <script type="module" src="app.js"></script>
 
 </body>
