@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <h1 id="header-date"></h1>
+    <h1 id="header-date">Carregando data...</h1>
 
-    <div id="profile-name">Carregando...</div>
+    <div id="profile-name">Carregando perfil...</div>
 
     <div class="xp-bar">
         <div class="xp-fill"></div>
@@ -20,12 +20,14 @@
     <p>Nível: <span id="level-value">1</span></p>
 
     <h2>Tarefas Diárias</h2>
-    <div id="daily-tasks-container"></div>
+    <div id="daily-tasks-container">
+        <!-- tarefas aparecem aqui pelo app.js -->
+    </div>
 
-    <!-- Carrega configurações do Firebase -->
+    <!-- Configurações do Firebase (variáveis globais) -->
     <script src="firebase-config.js"></script>
 
-    <!-- Carrega lógica principal -->
+    <!-- Código principal da aplicação (módulo JS) -->
     <script type="module" src="app.js"></script>
 
 </body>
