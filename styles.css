@@ -1,1 +1,62 @@
-/* estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+#profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.xp-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.xp-fill {
+    height: 100%;
+    width: 0%;
+    background: #4CAF50;
+    transition: width 0.4s ease;
+}
+
+.daily-task {
+    background: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-name {
+    font-size: 16px;
+}
+
+.task-complete-btn {
+    background: #2196F3;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.task-complete-btn:hover {
+    background: #0b7dda;
+}
