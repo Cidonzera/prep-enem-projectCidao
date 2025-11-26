@@ -1,41 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prep ENEM</title>
-
-    <!-- Importa o CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho com data -->
     <header>
         <h1 id="header-date"></h1>
+        <div id="profile">
+            <span id="profile-name">Carregando...</span>
+        </div>
     </header>
 
-    <!-- Perfil -->
-    <section id="profile">
-        <h2 id="profile-name">Carregando...</h2>
+    <section id="stats">
+        <div class="stat">
+            Nível: <span id="level-value">0</span>
+        </div>
+        <div class="stat">
+            Moedas: <span id="coins-value">0</span>
+        </div>
         <div class="xp-bar">
             <div class="xp-fill"></div>
         </div>
-        <p>XP: <span id="xp-value">0</span></p>
-        <p>Moedas: <span id="coins-value">0</span></p>
-        <p>Nível: <span id="level-value">1</span></p>
+        <div class="stat">
+            XP: <span id="xp-value">0</span>
+        </div>
     </section>
 
-    <!-- Tarefas Diárias -->
-    <section id="daily-tasks">
-        <h2>Tarefas Diárias</h2>
-        <div id="daily-tasks-container"></div>
-    </section>
+    <h2>Tarefas Diárias</h2>
+    <div id="daily-tasks-container"></div>
 
-    <!-- Firebase Config -->
+    <!-- Firebase configs -->
     <script src="firebase-config.js"></script>
 
     <!-- App principal -->
     <script type="module" src="app.js"></script>
+
 </body>
 </html>
